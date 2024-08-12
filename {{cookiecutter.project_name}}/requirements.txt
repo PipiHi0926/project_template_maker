@@ -1,0 +1,6 @@
+pytest
+pytest-cov
+black
+sphinx
+bump2version
+pandas
