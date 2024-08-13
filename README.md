@@ -6,7 +6,8 @@
 ## ⭐ 基礎功能
 - 建立專案模板，包含README.md, setup.py, setup.cfg等多個架構下檔案
     ```
-    # 模板預設
+    # 預設模板框架
+
     my_project/
     ├── src/
     │    ├──__init__.py  
@@ -23,6 +24,36 @@
     └── README.md
     ```
 
+- 預先幫你設置好.gitignore，來定義好來一般git管控上的「忽略清單」，即不會上傳至git
+
+- setup.py 是用來定義專案的打包設定，包含了專案的各種配置，如專案名稱、版本、作者、安裝依賴等
+
+- setup.cfg 是另一種配置專案的打包設定方法，使用 INI 格式來編寫，內容可能如下(僅舉例)
+    ```ini=
+    # setup.cfg 預設內容說明
+
+    [bumpversion]
+    current_version = 0.1.0   # 當前版本號
+    commit = True  # 啟用當版本號更新時，會自動生成一個 Git 提交。
+    tag = True
+
+    [bumpversion:file:setup.py]
+    search = version="{current_version}" # 在 setup.py 文件中搜尋當前版本號的字串
+    replace = version="{new_version}" # 將搜尋到的版本號字串替換為新的版本號
+
+    [bumpversion:file:Dash board for APS/__init__.py] 
+    search = __version__ = "{current_version}" # 在該文件中搜尋 __version__ 變量的當前版本號
+    replace = __version__ = "{new_version}" # 將 __version__ 變量的值替換為新的版本號
+
+    [bdist_wheel]
+    universal = 1
+
+    [flake8]
+    exclude = docs # 配置 flake8 代碼風格檢查工具，在檢查時應排除 docs 資料夾
+
+    [tool:pytest]
+    addopts = --ignore=setup.py # 配置 `pytest` 測試框架的選項，此處範例為告訴 pytest 忽略 setup.py 文件
+    ```
 
 
 - 留意，這邊只是小型專案的扁平化模板，大型專案建議可自行定義、調整，以下列出幾種典型方案
@@ -31,6 +62,7 @@
     -  小專案、或者不需要過多複雜組織的情況下，主程式碼可能直接放在專案的根目錄中
         ```
         # 小型扁平化專案
+
         my_project/
         ├── main_program.py
         ├── tests/
@@ -39,7 +71,8 @@
         ```
     -  需要將程式碼打包成庫或模組時，將主程式碼放在 lib/ 資料夾中
         ```
-        # 程式碼需要打包成模組
+        # 程式碼需要打包成模組常見框架
+
         my_project/
         ├── lib/
         │   └── main_program.py
@@ -49,7 +82,8 @@
         ```
     - 如果專案包含可執行的腳本或程式，這些腳本通常會放在 bin/ 資料夾中
         ```
-        # 包含可執行腳本時
+        # 包含可執行腳本時常見框架
+
         my_project/
         ├── src/
         │   └── main_program.py
@@ -59,8 +93,6 @@
         ├── docs/
         └── README.md
         ```
-
-- 預先幫你設置好.gitignore，來定義好來一般git管控上的「忽略清單」，即不會上傳至git
 
 
 
