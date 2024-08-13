@@ -70,7 +70,7 @@ Welcome to cookiecutter-simple-pypackage! This guide will help you quickly and e
         ├── docs/
         └── README.md
         ```
-    -  需要將程式碼打包成庫或模組時，將主程式碼放在 lib/ 資料夾中
+    -  需要將程式碼打包成庫或模組時，將主程式碼放在 lib 資料夾中
         ```
         # 程式碼需要打包成模組常見框架
 
