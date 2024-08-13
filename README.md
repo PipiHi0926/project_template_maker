@@ -2,6 +2,69 @@
 
 歡迎使用 `cookiecutter-simple-pypackage`！本指南將幫助您快速且輕鬆地初始化 Python 專案。
 
+
+## ⭐ 基礎功能
+- 建立專案模板，包含README.md, setup.py, setup.cfg等多個架構下檔案
+    ```
+    # 模板預設
+    my_project/
+    ├── src/
+    │    ├──__init__.py  
+    │    └── main_program.py
+    ├── tests/
+    │    ├──__init__.py  
+    │    └── test_example.py
+    ├── docs/
+    ├── Makefile
+    ├── setup.cfg 
+    ├── setup.py
+    ├── use_example.py  
+    ├── .gitignore
+    └── README.md
+    ```
+
+
+
+- 留意，這邊只是小型專案的扁平化模板，大型專案建議可自行定義、調整，以下列出幾種典型方案
+    -  主程式放在 `根目錄/src/程式`，可以幫助將程式碼和其他專案資源（如測試、文件等）分開，如本模板
+
+    -  小專案、或者不需要過多複雜組織的情況下，主程式碼可能直接放在專案的根目錄中
+        ```
+        # 小型扁平化專案
+        my_project/
+        ├── main_program.py
+        ├── tests/
+        ├── docs/
+        └── README.md
+        ```
+    -  需要將程式碼打包成庫或模組時，將主程式碼放在 lib/ 資料夾中
+        ```
+        # 程式碼需要打包成模組
+        my_project/
+        ├── lib/
+        │   └── main_program.py
+        ├── tests/
+        ├── docs/
+        └── README.md
+        ```
+    - 如果專案包含可執行的腳本或程式，這些腳本通常會放在 bin/ 資料夾中
+        ```
+        # 包含可執行腳本時
+        my_project/
+        ├── src/
+        │   └── main_program.py
+        ├── bin/
+        │   └── run_program.sh
+        ├── tests/
+        ├── docs/
+        └── README.md
+        ```
+
+- 預先幫你設置好.gitignore，來定義好來一般git管控上的「忽略清單」，即不會上傳至git
+
+
+
+
 ## ⭐ 操作方法
 
 
