@@ -2,6 +2,7 @@
 
 歡迎使用 `cookiecutter-simple-pypackage`！本指南將幫助您快速且輕鬆地初始化 Python 專案。
 
+Welcome to cookiecutter-simple-pypackage! This guide will help you quickly and easily initialize your Python project.
 
 ## ⭐ 基礎功能
 - 建立專案模板，包含README.md, setup.py, setup.cfg等多個架構下檔案
